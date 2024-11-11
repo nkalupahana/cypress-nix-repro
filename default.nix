@@ -1,6 +1,7 @@
-# default.nix
-
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import (fetchTarball {
+    url = "https://github.com/NixOS/nixpkgs/archive/76612b17c0ce71689921ca12d9ffdc9c23ce40b2.tar.gz";
+    sha256 = "03pmy2dv212mmxgcvwxinf3xy6m6zzr8ri71pda1lqggmll2na12";
+  }) {} }:
 
 pkgs.mkShell {
   buildInputs = [
